@@ -1,0 +1,5 @@
+Sale,1,1,Flat,0.10
+Sale,2,3,Percentage,0.80
+Sale,3,4,Flat,1.10
+Bogo,4,2,Percentage,0.0
+Group,5,5,3,5.0

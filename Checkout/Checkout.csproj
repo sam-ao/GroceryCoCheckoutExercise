@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ResourceFiles Include="$(MSBuildProjectDirectory)\resources\*.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions" Version="14.0.3" />
+  </ItemGroup>
+  <Target Name="CopyResources" AfterTargets="Build">
+    <Message Text="Executing CopyResources task" Importance="High" />
+    <Copy SourceFiles="@(ResourceFiles)" DestinationFolder="$(OutDir)\resources" />
+    <Message Text="Copied build files" Importance="High" />
+  </Target>
+</Project>
