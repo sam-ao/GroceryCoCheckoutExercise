@@ -7,7 +7,7 @@ class GroceryCoCheckout
     {
         if (args.Length == 0)
         {
-            System.Console.WriteLine("Please provide the to a file with a list of items to scan.");
+            System.Console.WriteLine("Please provide the path to a file with a list of items to scan.");
             return 1;
         }
         var groceryListFilePath = args[0];
@@ -53,6 +53,11 @@ class GroceryCoCheckout
         catch (ItemScanningException e)
         {
             System.Console.WriteLine("Error occurred while scanning grocery list. {0}", e);
+            return 1;
+        }
+        catch (Exception e)
+        {
+            System.Console.WriteLine("Error occurred: {0}", e);
             return 1;
         }
 
